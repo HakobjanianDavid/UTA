@@ -9,10 +9,10 @@ describe('SpyesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpyesComponent ],
-      providers: [ TestService ]
+      declarations: [SpyesComponent],
+      providers: [TestService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,14 +24,16 @@ describe('SpyesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('without test spy', () => {
     const res = component.testMethod();
     expect(res).toEqual('some-value anover value');
   });
-  it('without test spy', () => {
-        spyOn((<any>component).service, 'getValue');
-        const res = component.testMethod();
-        expect(res).toEqual('undefined anover value');
-        expect((<any>component).service.getValue).toHaveBeenCalled();
+
+  it('with test spy', () => {
+    spyOn((<any>component).service, 'getValue');
+    const res = component.testMethod();
+    expect(res).toEqual('undefined anover value');
+    expect((<any>component).service.getValue).toHaveBeenCalled();
   });
 });

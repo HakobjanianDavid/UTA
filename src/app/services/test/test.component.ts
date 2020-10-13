@@ -10,9 +10,14 @@ export class TestComponent implements OnInit {
 
   constructor(private service: TestService) { }
 
-    ngOnInit(): void {
-    }
-    testMethod() {
-        return this.service.getValue() + ' anover value';
-    }
+  ngOnInit(): void {
+  }
+  
+  testMethod() {
+    return this.service.getValue() + ' anover value';
+  }
+  
+  testNaN() {
+    return NaN;
+  }
 }

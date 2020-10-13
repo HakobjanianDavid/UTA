@@ -10,4 +10,8 @@ export class TestService {
   getValue() {
       return 'some-value';
   }
+  
+  getData(n) {
+    return 5*n;
+  }
 }
